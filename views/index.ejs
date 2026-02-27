@@ -14,16 +14,16 @@
     <% }) %>
     </ol>
 </body> -->
-<h1>Users Admin Interface</h1>
-<p><a href="/users/add">Add User</a></p>
+<h1>Product Admin Interface</h1>
+<p><a href="/add">Add Product</a></p>
 <ol>
-  <% users.forEach(user => { %>
+  <% products.forEach(product => { %>
   <li>
-    <%= user.name %> -
-    <%= user.email %> -
-    <%= user.role %> -
-    <a href="/users/<%= user._id %>/edit">Edit</a> &nbsp;
-    <a href="/users/<%= user._id %>/delete">Delete</a>
+    <%= product.name %> -
+    <%= product.description %> -
+    <%= product.price %> -
+    <a href="/<%= product._id %>/edit">Edit</a> &nbsp;
+    <a href="/<%= product._id %>/delete">Delete</a>
   </li>
   <% }) %>
 </ol>

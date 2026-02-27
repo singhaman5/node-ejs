@@ -1,0 +1,13 @@
+<h1>Users Admin Interface</h1>
+<p><a href="/users/add">Add User</a></p>
+<ol>
+  <% users.forEach(user => { %>
+  <li>
+    <%= user.name %> -
+    <%= user.email %> -
+    <%= user.role %> -
+    <a href="/users/<%= user._id %>/edit">Edit</a> &nbsp;
+    <a href="/users/<%= user._id %>/delete">Delete</a>
+  </li>
+  <% }) %>
+</ol>
