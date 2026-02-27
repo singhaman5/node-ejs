@@ -16,15 +16,11 @@
 </form>
 </body>
 </html> -->
-<h1>Edit User Form</h1>
-<form action="/users/<%= user._id %>/save-user" method="POST">
-  <p><input type="text"  name="name"  value="<%= user.name %>"  placeholder="Full Name" /></p>
-  <p><input type="email" name="email" value="<%= user.email %>" placeholder="Email" /></p>
-  <p>
-    <select name="role">
-      <option value="user"  <%= user.role === 'user'  ? 'selected' : '' %>>User</option>
-      <option value="admin" <%= user.role === 'admin' ? 'selected' : '' %>>Admin</option>
-    </select>
-  </p>
+<h1>Edit Product Form</h1>
+<form action="/<%= product._id %>/save-product" method="POST">
+  <p><input type="text"   name="name"        value="<%= product.name %>"        placeholder="Product Name" /></p>
+  <p><input type="text"   name="description" value="<%= product.description %>" placeholder="Product Description" /></p>
+  <p><input type="number" name="price"       value="<%= product.price %>"       placeholder="Product Price" /></p>
+  <p><input type="text"   name="imageurl"    value="<%= product.imageurl %>"    placeholder="Image URL" /></p>
   <p><button>Save</button></p>
 </form>
