@@ -1,0 +1,12 @@
+<h1>Edit User Form</h1>
+<form action="/users/<%= user._id %>/save-user" method="POST">
+  <p><input type="text"  name="name"  value="<%= user.name %>"  placeholder="Full Name" /></p>
+  <p><input type="email" name="email" value="<%= user.email %>" placeholder="Email" /></p>
+  <p>
+    <select name="role">
+      <option value="user"  <%= user.role === 'user'  ? 'selected' : '' %>>User</option>
+      <option value="admin" <%= user.role === 'admin' ? 'selected' : '' %>>Admin</option>
+    </select>
+  </p>
+  <p><button>Save</button></p>
+</form>

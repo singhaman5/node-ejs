@@ -1,0 +1,13 @@
+<h1>New User Form</h1>
+<form action="/users/save" method="POST">
+  <p><input type="text"     name="name"     placeholder="Full Name" /></p>
+  <p><input type="email"    name="email"    placeholder="Email" /></p>
+  <p><input type="password" name="password" placeholder="Password" /></p>
+  <p>
+    <select name="role">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+  </p>
+  <p><button>Save</button></p>
+</form>
