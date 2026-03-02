@@ -258,4 +258,30 @@ app.get("/users/:id/delete", async (req, res) => {
   res.redirect("/users");
 });
 
+app.get("/signup", (req, res) => {
+  res.render("users/signup");
+});
+
+app.post("/signup", async (req, res) => {
+  await userModel.create(req.body);
+  res.redirect("/signin");
+});
+
+app.get("/signin", (req, res) => {
+  res.render("users/signin");
+});
+
+app.post("/signin", async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await userModel.findOne({ email, password });
+
+  if (!user) {
+    return res.send("Invalid email or password");
+  }
+
+  // later you can add session / JWT here
+  res.send(`Welcome ${user.name}`);
+});
+
 export default app;
